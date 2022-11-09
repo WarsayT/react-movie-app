@@ -18,7 +18,15 @@ function App() {
     setMovies(data.Search);
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      // 👇️ your logic here
+      searchMovies(searchTerm);
+    }
+  };
+
   useEffect(() => {
+    const API_URL = "http://omdbapi.com?apikey=a79a7000"
     searchMovies("spider man")
   }, [])
 
@@ -30,6 +38,7 @@ function App() {
         <input 
           value={searchTerm} 
           placeholder='search for movies'
+          onKeyDown={handleKeyDown}
           onChange={(e) => {setSearchTerm(e.target.value)}}
         />
         <img src={SearchIcon} alt="" onClick={() => {searchMovies(searchTerm)}}/>
