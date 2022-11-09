@@ -26,7 +26,7 @@ function App() {
   };
 
   useEffect(() => {
-    const API_URL = "http://omdbapi.com?apikey=a79a7000"
+    const API_URL = "https://omdbapi.com?apikey=a79a7000"
     searchMovies("spider man")
   }, [])
 
